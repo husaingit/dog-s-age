@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+</body>
+
+</html>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+            shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        .aboutimg {
+            background-image: url(dog.jpg);
+            background-size: 78% 110%;
+            background-attachment: fixed;
+            width: 100%;
+            height: 650px;
+        }
+        
+        p {
+            color: rgb(255, 254, 254);
+            font-size: 20px;
+        }
+        
+        h2 {
+            color: rgb(11 243 212);
+            font-weight: bold;
+            letter-spacing: 5px;
+        }
+        
+        label {
+            color: rgb(255, 255, 255);
+            font-size: 23px;
+            font-weight: bold;
+            padding: 20px;
+            letter-spacing: 1px;
+            word-spacing: 5px;
+        }
+        
+        #inpp {
+            background-color: #524c4c1a;
+            opacity: 0.8;
+            outline: none;
+            color: white;
+        }
+        
+        #btn {
+            background: rgb(31, 30, 30);
+            opacity: 0.6;
+            border-radius: 30px;
+            border: none;
+            height: 40px!important;
+            outline: none;
+            margin: 10px;
+            padding: 15px;
+            line-height: 10px;
+            color: rgb(78, 235, 188);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container aboutimg text-center">
+        <h2 text-center>Hello Puppy!</h2>
+        <div class="col-md-12 col-lg-12 col-sm-16 col-xs-6">
+            <p>
+                Dogs mature at a faster rate than human beings. We often say a dog’s age can be calculated in “dog years” to account for their growth compared to a human of the same age. In some ways we could say, time moves quickly for dogs — 8 years in a human’s life
+                equates to 45 years in a dog’s life. How old would you be if you were a dog?</p>
+            <p>Let's Find It Out</p>
+            <div class="col-lg-12 col-md-12 col-sm-6 col-xs-6">
+                <label>Enter human age</label><br>
+                <input type="text" id="inpp"><br>
+                <input type="button" id="btn" value="FIND OUT" onclick="compute()">
+                <p>Your age would have been <span id="ans">___</span> years
+                    <span id="month">__</span>months</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        function compute()
+
+        {
+            var x = parseInt(document.getElementById("inpp").value)
+            if (x <= 21) {
+                var age = (x / 10.5).toFixed(2);
+                console.log(age)
+            } else if (x > 21) {
+                age = ((21 / 10.5) + (x - 21) / 4).toFixed(2);
+                console.log(age);
+
+            }
+            var comp = age.toString()
+            var b = comp.split('.')
+            var year = b[0];
+            console.log(year)
+            var month = parseInt(parseInt(b[1]) * 12 / 100)
+            console.log(month.toFixed(1))
+
+
+            document.getElementById("ans").innerHTML = year;
+            document.getElementById("month").innerHTML = month;
+        }
+    </script>
+</body>
+
+</html>
